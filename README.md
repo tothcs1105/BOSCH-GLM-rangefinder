@@ -1,4 +1,4 @@
-# BOSCH rangefinder
+# BOSCH-Rangefinder
 
 Python3 script to remote control a BOSCH GLM 100C or GLM 50C rangefinder.
 

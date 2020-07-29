@@ -9,11 +9,11 @@ def connect(bluetooth_address, port):
         socket.close()
         raise ConnectionError
 
-def find(dev_name):
-    print('Searching for ' + dev_name)
+def find(dev_bluetooth_name):
+    print('Searching for ' + dev_bluetooth_name)
     nearby_devices = bluetooth.discover_devices(duration=8, lookup_names=True, flush_cache=True, lookup_class=False)
-    for val in enumerate(nearby_devices):
+    for index, val in enumerate(nearby_devices):
         addr, name = val
-        if dev_name in name:
-            print('Found ' + dev_name + ' @', addr)
-            return addr
+        if dev_bluetooth_name in name:
+            print('Found ' + name + ' @', addr)
+            return val

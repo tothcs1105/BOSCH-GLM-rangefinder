@@ -32,7 +32,7 @@
 	],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "pip3 install -r requirements/production.txt && requirements/development.txt",
+	"postCreateCommand": "pip3 install -r requirements/development.txt -r requirements/production.txt",
 
 	"mounts": [
 		"source=${env:HOME}${env:USERPROFILE}/.ssh,target=/home/vscode/.ssh,type=bind"

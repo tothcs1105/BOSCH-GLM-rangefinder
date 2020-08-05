@@ -1,4 +1,4 @@
-from typing import NamedTuple
+from .bluetooth_device import BluetoothDevice
 import bluetooth
 
 def connect(bluetooth_address: str, port: int)->bluetooth.BluetoothSocket:
@@ -17,5 +17,4 @@ def find(dev_bluetooth_name: str):
         addr, name = item[1]
         if dev_bluetooth_name in name:
             print('Found ' + name + ' @', addr)
-            BluetoothDevice = NamedTuple('BluetoothDevice', [('name', str), ('addr', str)])
-            return BluetoothDevice(name = name, addr = addr)
+            return BluetoothDevice(name, addr)

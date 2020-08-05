@@ -2,7 +2,7 @@ import unittest
 from unittest.mock import call, Mock
 
 import bluetooth
-import rangefinder.connector as connector
+from rangefinder.connection import connector
 
 class TestConnector(unittest.TestCase):
 
@@ -26,8 +26,10 @@ class TestConnector(unittest.TestCase):
         bluetooth.discover_devices = Mock(return_value = nearby_devices)
 
         result = connector.find(dev_bluetooth_name)
-
-        self.assertEqual(result, ('addr3', dev_bluetooth_name))
+        
+        self.assertIsNotNone(result)
+        self.assertEqual(result.addr, "addr3")
+        self.assertEqual(result.name, "test_bl_name")
 
 if __name__ == '__main__':
     unittest.main()

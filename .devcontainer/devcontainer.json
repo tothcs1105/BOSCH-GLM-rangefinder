@@ -37,4 +37,6 @@
 	"mounts": [
 		"source=${env:HOME}${env:USERPROFILE}/.ssh,target=/home/vscode/.ssh,type=bind"
 	],
+
+	"runArgs": ["--net=host"]
 }

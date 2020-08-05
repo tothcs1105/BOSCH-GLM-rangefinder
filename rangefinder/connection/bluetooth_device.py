@@ -1,4 +1,4 @@
-class BlueToothDevice:
+class BluetoothDevice:
     def __init__(self, name: str, addr: str):
         self.__name = name
         self.__addr = addr

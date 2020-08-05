@@ -2,7 +2,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='BOSCH-GLM-rangefinder',
+    name='BOSCH-Rangefinder',
     version='0.0',
     author='philipptrenz',
     author_email='mail@philipptrenz.de',

@@ -1,5 +1,5 @@
-from .bluetooth_device import BluetoothDevice
 import bluetooth
+from .bluetooth_device import BluetoothDevice
 
 def connect(bluetooth_address: str, port: int)->bluetooth.BluetoothSocket:
     try:

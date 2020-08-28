@@ -1,1 +1,0 @@
-from .bosch_message_normal_frame import BoschMessageNormalFrame

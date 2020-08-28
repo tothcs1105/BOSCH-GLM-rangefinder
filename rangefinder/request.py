@@ -1,6 +1,6 @@
 from abc import ABCMeta, abstractmethod
 
-class Message(metaclass=ABCMeta):
+class Request(metaclass=ABCMeta):
     @property
     @abstractmethod
     def payload(self) -> bytearray:

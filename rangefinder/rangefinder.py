@@ -1,6 +1,6 @@
 from abc import ABCMeta, abstractmethod
 from connection import Dispatcher
-from message import Message
+from request import Request
 
 class RangeFinder(metaclass=ABCMeta):
     def __init__(self, dispatcher: Dispatcher):
@@ -11,5 +11,5 @@ class RangeFinder(metaclass=ABCMeta):
         return self._dispatcher.isConnected()
 
     @abstractmethod
-    def _sendMessage(self, message: Message):
+    def _sendMessage(self, request: Request):
         pass

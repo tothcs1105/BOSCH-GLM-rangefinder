@@ -1,18 +1,14 @@
 from crccheck.crc import Crc
-from .bosch_message import BoschMessage
+from .bosch_request_base import BoschRequestBase
 
-class BoschMessageNormalFrame(BoschMessage):
-    def __init__(self, command: int, extraPayload: [int] = []):
+class BoschRequest192(BoschRequestBase):
+    def __init__(self, command: int, extraPayload: [int]):
         super().__init__(command, extraPayload)
-
-    @property
-    def _frame(self) -> int:
-        return 192
 
     @property
     def payload(self) -> bytearray:
         buffer = bytearray()
-        buffer.append(self._frame)
+        buffer.append(192)
         buffer.append(self._command)
         buffer.append(len(self._extraPayload))
         buffer.extend(bytearray(self._extraPayload))
@@ -20,4 +16,3 @@ class BoschMessageNormalFrame(BoschMessage):
         crcCalc.process(buffer)
         buffer.append(crcCalc.final())
         return buffer
-    

@@ -2,7 +2,7 @@ from crccheck.crc import Crc
 from .bosch_request_base import BoschRequestBase
 
 class BoschRequest192(BoschRequestBase):
-    def __init__(self, command: int, extraPayload: [int]):
+    def __init__(self, command: int, extraPayload: [int] = []):
         super().__init__(command, extraPayload)
 
     @property

@@ -15,8 +15,24 @@ class BoschGlm(RangeFinder):
         else:
             self._sendMessage(BoschRequest192(66))
 
-    def changeSettings(self, setSpiritLevelEnabled: bool, setDispRotationEnabled: bool, setSpeakerEnabled: bool, setLaserPointerEnabled: bool, setBacklightMode: BacklightMode, setAngleUnit: AngleUnit, setMeasurementUnit: MeasurementUnit):
-        extraData = [int(setSpiritLevelEnabled), int(setDispRotationEnabled), int(setSpeakerEnabled), int(setLaserPointerEnabled), setBacklightMode.value, setAngleUnit.value, setMeasurementUnit.value]
+    def changeSettings(
+        self,
+        setSpiritLevelEnabled: bool,
+        setDispRotationEnabled: bool,
+        setSpeakerEnabled: bool,
+        setLaserPointerEnabled: bool,
+        setBacklightMode: BacklightMode,
+        setAngleUnit: AngleUnit,
+        setMeasurementUnit: MeasurementUnit
+            ):
+        extraData = [
+            int(setSpiritLevelEnabled),
+            int(setDispRotationEnabled),
+            int(setSpeakerEnabled),
+            int(setLaserPointerEnabled),
+            setBacklightMode.value,
+            setAngleUnit.value,
+            setMeasurementUnit.value]
         self._sendMessage(BoschRequest192(84, extraData))
 
     def _sendMessage(self, request: Request):

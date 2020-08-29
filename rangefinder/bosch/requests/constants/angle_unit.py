@@ -1,5 +1,6 @@
 from enum import Enum
 
+
 class AngleUnit(Enum):
     DEGREE = 16
     IN_FT = 19

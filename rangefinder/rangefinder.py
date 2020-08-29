@@ -2,6 +2,7 @@ from abc import ABCMeta, abstractmethod
 from connection import Dispatcher
 from request import Request
 
+
 class RangeFinder(metaclass=ABCMeta):
     def __init__(self, dispatcher: Dispatcher):
         self._dispatcher = dispatcher

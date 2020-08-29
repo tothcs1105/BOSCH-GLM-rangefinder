@@ -4,6 +4,7 @@ from request import Request
 from .requests import BoschRequest192
 from .requests.constants import AngleUnit, BacklightMode, MeasurementUnit
 
+
 class BoschGlm(RangeFinder):
     def __init__(self, dispatcher: Dispatcher):
         super().__init__(dispatcher)

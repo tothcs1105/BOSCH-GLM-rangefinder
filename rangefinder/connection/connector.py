@@ -1,14 +1,16 @@
 import bluetooth
 from .bluetooth_device import BluetoothDevice
 
-def connect(bluetooth_address: str, port: int)->bluetooth.BluetoothSocket:
+
+def connect(bluetooth_address: str, port: int) -> bluetooth.BluetoothSocket:
     try:
         socket = bluetooth.BluetoothSocket(bluetooth.RFCOMM)
         socket.connect((bluetooth_address, port))
         return socket
-    except:
+    except Exception:
         socket.close()
         raise ConnectionError
+
 
 def find(dev_bluetooth_name: str):
     print('Searching for ' + dev_bluetooth_name)

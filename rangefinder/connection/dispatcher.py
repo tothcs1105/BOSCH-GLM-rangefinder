@@ -1,5 +1,6 @@
 import bluetooth
 
+
 class Dispatcher:
     def __init__(self, socket: bluetooth.BluetoothSocket):
         self.__socket = socket

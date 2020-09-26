@@ -1,4 +1,5 @@
 from abc import ABCMeta, abstractmethod
+from types import FunctionType
 from connection import Dispatcher
 from request import Request
 
